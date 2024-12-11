@@ -1,13 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import Nav from './Components/Nav';
-import Notes from './Components/Notes';
+import RecommendedNotes from './Components/RecommendedNotes';
+import Branch from './Components/Branch';
+import Year from './Components/Year';
+import Scheme from './Components/Scheme';
+import Subject from './Components/Subject';
+import Resources from './Components/Resources';
 const App = () => {
   return (
     <>
     <Nav/>
-    <Notes/>
+    {/* <RecommendedNotes/> */}
+    {/* <Branch/> */}
+    {/* <Year/> */}
+    {/* <Scheme/> */}
+    {/* <Subject/> */}
+    <Resources/>
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import React from 'react';
-import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { globalStyles } from './global_styles';
 
