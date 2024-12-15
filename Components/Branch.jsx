@@ -21,7 +21,35 @@ const Branch = () => {
                         <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
                             <Text>CSSE</Text>
                         </TouchableOpacity>
+                        </View>
+                        <View style={styles.branchNameContainer}>
+                        {/* each branch mini container */}
                         <TouchableOpacity style={styles.branchNameMiniContainer}>
+                            <Text>CSCE</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
+                            <Text>IT</Text>
+                        </TouchableOpacity>
+                        </View>
+                        <View style={styles.branchNameContainer}>
+                        {/* each branch mini container */}
+                        <TouchableOpacity style={styles.branchNameMiniContainer}>
+                            <Text>ETC</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
+                            <Text>EE</Text>
+                        </TouchableOpacity>
+                        </View>
+                        <View style={styles.branchNameContainer}>
+                        {/* each branch mini container */}
+                        <TouchableOpacity style={styles.branchNameMiniContainer}>
+                            <Text>ME</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
+                            <Text>CIVIL</Text>
+                        </TouchableOpacity>
+                        </View>
+                        {/*<TouchableOpacity style={styles.branchNameMiniContainer}>
                             <Text>CSCE</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
@@ -38,8 +66,7 @@ const Branch = () => {
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
                             <Text>CIVIL</Text>
-                        </TouchableOpacity>
-                    </View>
+                        </TouchableOpacity> */}
                 </ScrollView>
             </View>
         </>
@@ -57,8 +84,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        marginTop: 25
+        // flexWrap: 'wrap',
+        marginTop: 5
     },
     branchNameMiniContainer: {
         justifyContent: 'center',

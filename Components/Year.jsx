@@ -25,6 +25,9 @@ const Year = () => {
                         <TouchableOpacity style={[styles.branchNameMiniContainer, { marginLeft: 20 }]}>
                             <Text>2nd Year</Text>
                         </TouchableOpacity>
+                    </View>
+                    <View style={styles.branchNameContainer}>
+                        {/* each year mini container */}
                         <TouchableOpacity style={styles.branchNameMiniContainer}>
                             <Text>3rd Year</Text>
                         </TouchableOpacity>
@@ -32,6 +35,12 @@ const Year = () => {
                             <Text>4th Year</Text>
                         </TouchableOpacity>
                     </View>
+                        {/*<TouchableOpacity style={styles.branchNameMiniContainer}>
+                            <Text>3rd Year</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.branchNameMiniContainer, { marginLeft: 20 }]}>
+                            <Text>4th Year</Text>
+                        </TouchableOpacity> */}
                 </ScrollView>
             </View>
         </>
@@ -49,8 +58,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        // marginTop: 25
+        // flexWrap: 'wrap',
+        marginTop: 5
     },
     branchNameMiniContainer: {
         justifyContent: 'center',

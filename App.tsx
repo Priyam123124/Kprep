@@ -13,10 +13,10 @@ const App = () => {
     <Nav/>
     {/* <RecommendedNotes/> */}
     {/* <Branch/> */}
-    {/* <Year/> */}
+    <Year/>
     {/* <Scheme/> */}
     {/* <Subject/> */}
-    <Resources/>
+    {/* <Resources/> */}
     </>
   );
 }
