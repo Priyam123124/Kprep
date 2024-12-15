@@ -49,24 +49,6 @@ const Branch = () => {
                             <Text>CIVIL</Text>
                         </TouchableOpacity>
                         </View>
-                        {/*<TouchableOpacity style={styles.branchNameMiniContainer}>
-                            <Text>CSCE</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
-                            <Text>IT</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.branchNameMiniContainer}>
-                            <Text>ETC</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
-                            <Text>EE</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.branchNameMiniContainer}>
-                            <Text>ME</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[styles.branchNameMiniContainer, {marginLeft: 20}]}>
-                            <Text>CIVIL</Text>
-                        </TouchableOpacity> */}
                 </ScrollView>
             </View>
         </>

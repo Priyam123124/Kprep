@@ -35,12 +35,6 @@ const Year = () => {
                             <Text>4th Year</Text>
                         </TouchableOpacity>
                     </View>
-                        {/*<TouchableOpacity style={styles.branchNameMiniContainer}>
-                            <Text>3rd Year</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[styles.branchNameMiniContainer, { marginLeft: 20 }]}>
-                            <Text>4th Year</Text>
-                        </TouchableOpacity> */}
                 </ScrollView>
             </View>
         </>
