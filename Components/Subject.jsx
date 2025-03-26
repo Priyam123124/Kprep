@@ -1,23 +1,58 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native'
+import React,{useContext} from 'react'
+import themeContext from '../context/themeContext'
 import { globalStyles } from './global_styles'
+import { useNavigation } from '@react-navigation/native'
+import { StackActions } from '@react-navigation/native'
 
 const Subject = () => {
+    const context = useContext(themeContext)
+    const { dark } = context
+
+    const navigation = useNavigation()
+        const redirect = ()=>{
+            navigation.dispatch(
+                StackActions.push('NotesSelection')
+            )
+        }
     return (
         <>
-            <View style={globalStyles.bgGround}>
-                {/* everything is wrapped inside a scrollview */}
-                <ScrollView>
-                    {/* Flow of the notes visibility eg:- CSE->1ST Year->Scheme A->Notes */}
-                    <View>
-                        <Text>CSE</Text>
-                    </View>
-                    {/* heading text */}
-                    <View style={{ justifyContent: 'center', alignItems: 'center', height: 60 }}>
-                        <Text style={styles.headingtext}>Please Select Your Subject</Text>
-                    </View>
-                </ScrollView>
-            </View>
+            <ScrollView style={[globalStyles.bgGround,{ backgroundColor: !dark ? '#333333' : 'white' }]}>
+                <Text style={[styles.headingtext, {color: dark ? 'black' : '#84CFFF'}]}>Subjects</Text>
+                
+                <View horizontal style={{ flexDirection: 'row', width: '90%', flexWrap: 'wrap', marginLeft: 20 }}>
+                        <TouchableOpacity onPress={redirect} style={{width: '47%'}}>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: '45%' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={redirect} style={{width: '47%',}}>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: '45%', marginLeft: '13%' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%', marginLeft: '13%' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={redirect} style={{width: '47%'}}>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: '45%' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={redirect} style={{width: '47%',}}>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: '45%', marginLeft: '13%' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%', marginLeft: '13%' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={redirect} style={{width: '47%'}}>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: '45%' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={redirect} style={{width: '47%',}}>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: '45%', marginLeft: '13%' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%', marginLeft: '13%' }]}></Text>
+                        </TouchableOpacity>
+                </View>
+
+            </ScrollView>
         </>
     )
 }
@@ -26,7 +61,9 @@ export default Subject
 
 const styles = StyleSheet.create({
     headingtext: {
-        fontSize: 22,
-        fontWeight: 900,
+        fontSize: 30,
+        fontFamily: 'Poppins-SemiBold',
+        margin: 20,
+        borderTopLeftRadius: 0
     },
 })

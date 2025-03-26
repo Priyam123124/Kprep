@@ -1,26 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Nav from './Components/Nav';
-import RecommendedNotes from './Components/RecommendedNotes';
-import Branch from './Components/Branch';
-import Year from './Components/Year';
-import Scheme from './Components/Scheme';
-import Subject from './Components/Subject';
-import Resources from './Components/Resources';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import ThemeState from './context/ThemeState'
+import App2 from './App2'
+
 const App = () => {
   return (
     <>
-    <Nav/>
-    {/* <RecommendedNotes/> */}
-    {/* <Branch/> */}
-    <Year/>
-    {/* <Scheme/> */}
-    {/* <Subject/> */}
-    {/* <Resources/> */}
+    <ThemeState>
+        <App2/>
+    </ThemeState>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})
