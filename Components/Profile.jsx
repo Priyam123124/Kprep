@@ -1,8 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React, { useContext } from 'react'
 import themeContext from '../context/themeContext'
 import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/FontAwesome'
+
+    const {width, height} = Dimensions.get('window')
+    const isTallDevice = width >=800 
 
 const Profile = () => {
   const context = useContext(themeContext)
@@ -35,13 +38,13 @@ const Profile = () => {
       },
       profile_icon: {
         backgroundColor: dark? '#75A665':'#5F727F',
-        width: '40%',
-        height: '21%',
+        width: isTallDevice?290:150,
+        height: isTallDevice?290:150,
         borderWidth: 2,
         borderStyle: 'solid',
         borderColor: 'white',
         marginTop: -50,
-        borderRadius: 200
+        borderRadius: 5000
       },
       info: {
         backgroundColor: dark?'#d9d7d7':'black',
@@ -51,10 +54,12 @@ const Profile = () => {
         marginTop: 25
       },
       upperText: {
+        fontSize: isTallDevice?25:13,
         fontFamily: 'ComicNeue-Regular',
         color: dark?'black':'white'
       },
       lowerText: {
+        fontSize: isTallDevice?25:13,
         fontFamily: 'ComicNeue-Bold',
         color: dark?'black':'white'
       }
@@ -71,13 +76,13 @@ const Profile = () => {
             style={styles.linear}>
           </LinearGradient>
           <View style={styles.profile_icon}></View>
-          <Text style={{fontFamily: 'ComicNeue-Bold', color: dark?'black':'white', fontSize: 25, marginTop: 20, letterSpacing: 1}}>Priyam Kumar</Text>
+          <Text style={{fontFamily: 'ComicNeue-Bold', color: dark?'black':'white', fontSize: isTallDevice?40:25, marginTop: 20, letterSpacing: 1}}>Priyam Kumar</Text>
           <View style={{borderRadius: 2, borderWidth: 0.5, marginTop: 15, width: "17%", height: "4%", justifyContent: 'center', alignItems: 'center', borderStyle: 'solid', borderBlockColor: dark?'black':'white'}}>
-          <Text style={{color: dark?'black': 'white'}}>Free</Text>
+          <Text style={{color: dark?'black': 'white', fontSize: isTallDevice?22:13}}>Free</Text>
           </View>
           <View style={styles.info}>
             <View style={{flexDirection: 'row', marginTop: 10, borderBottomColor: dark?'black':'white', borderBottomWidth: 0.2, borderBottomStyle: 'solid'}}>
-              <Icon style={{margin: 10}} name="cog" size={20} color={dark?"black":"white"} />
+              <Icon style={{margin: isTallDevice?15:10}} name="cog" size={isTallDevice?40:20} color={dark?"black":"white"} />
               <View>
                 <Text style={styles.upperText}>Roll Number</Text>
                 <Text style={styles.lowerText}>23051690</Text>
@@ -85,7 +90,7 @@ const Profile = () => {
             </View>
 
             <View style={{flexDirection: 'row', marginTop: 10, borderBottomColor: dark?'black':'white', borderBottomWidth: 0.2, borderBottomStyle: 'solid'}}>
-              <Icon style={{margin: 10}} name="envelope" size={20} color={dark?"black":"white"} />
+              <Icon style={{margin: isTallDevice?17:10}} name="envelope" size={isTallDevice?40:20} color={dark?"black":"white"} />
               <View>
                 <Text style={styles.upperText}>Email Address</Text>
                 <Text style={styles.lowerText}>23051690@kiit.ac.in</Text>
@@ -93,7 +98,7 @@ const Profile = () => {
             </View>
 
             <View style={{flexDirection: 'row', marginTop: 10, borderBottomColor: dark?'black':'white', borderBottomWidth: 0.2, borderBottomStyle: 'solid'}}>
-              <Icon style={{margin: 10}} name="book" size={20} color={dark?"black":"white"} />
+              <Icon style={{margin: isTallDevice?17:10}} name="book" size={isTallDevice?40:20} color={dark?"black":"white"} />
               <View>
                 <Text style={styles.upperText}>Branch</Text>
                 <Text style={styles.lowerText}>Computer Science</Text>
@@ -101,7 +106,7 @@ const Profile = () => {
             </View>
 
             <View style={{flexDirection: 'row', marginTop: 10, borderBottomColor: dark?'black':'white', borderBottomWidth: 0.2, borderBottomStyle: 'solid'}}>
-              <Icon style={{margin: 10}} name="graduation-cap" size={20} color={dark?"black":"white"} />
+              <Icon style={{margin: isTallDevice?17:10}} name="graduation-cap" size={isTallDevice?40:20} color={dark?"black":"white"} />
               <View>
                 <Text style={styles.upperText}>Year & Semester</Text>
                 <Text style={styles.lowerText}>Year 2, Semester 2</Text>
@@ -109,7 +114,7 @@ const Profile = () => {
             </View>
 
             <View style={{flexDirection: 'row', marginTop: 10, borderBottomColor: dark?'black':'white', borderBottomWidth: 0.2, borderBottomStyle: 'solid'}}>
-              <Icon style={{margin: 10}} name="calendar" size={20} color={dark?"black":"white"} />
+              <Icon style={{margin: isTallDevice?17:10}} name="calendar" size={isTallDevice?40:20} color={dark?"black":"white"} />
               <View>
                 <Text style={styles.upperText}>Joined</Text>
                 <Text style={styles.lowerText}>29 days ago</Text>

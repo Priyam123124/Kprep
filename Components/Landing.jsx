@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, useColorScheme, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, useColorScheme, View, Dimensions } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import themeContext from '../context/themeContext'
 import LinearGradient from 'react-native-linear-gradient'
@@ -11,7 +11,9 @@ const Landing = () => {
     const [mon, setMon] = useState("October")
     const [year, setYear] = useState(0)
     const { dark } = context
-
+    const {width, height} = Dimensions.get('window')
+    const isTallDevice = width >=800 
+    console.log(isTallDevice)
     useEffect(()=>{
         const interval = setInterval(() => {
             const a = new Date()
@@ -85,12 +87,12 @@ const Landing = () => {
             borderWidth: 1,
             borderStyle: 'solid',
             width: '95%',
-            height: 230,
+            height: isTallDevice? 400 : 230,
             marginTop: 10,
             borderRadius: 5,
         },
         welcome_font: {
-            fontSize: 22,
+            fontSize: isTallDevice?45:22,
             // fontWeight: 'bold',
             fontFamily: 'Poppins-Bold',
             marginRight: 20,
@@ -101,6 +103,7 @@ const Landing = () => {
             fontFamily: 'ComicNeue-Regular',
             letterSpacing: 0.3,
             marginRight: 20,
+            fontSize: isTallDevice?30:15,
             color: dark ? 'black' : 'white'
         },
         profile_image: {
@@ -125,7 +128,7 @@ const Landing = () => {
             width: '95%',
             justifyContent: 'center',
             alignItems: 'center',
-            height: 60,
+            height: isTallDevice?90:60,
             borderRadius: 5,
             marginTop: 5,
             marginBottom: 5,
@@ -139,7 +142,7 @@ const Landing = () => {
                     <View style={styles.welcome}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Image
-                                style={{ width: 100, height: 65, marginTop: 60, marginLeft: '15%' }}
+                                style={{ width: isTallDevice?250:140, height: isTallDevice?180:90, marginTop: 60, marginLeft: '5%' }}
                                 source={dark ? require('./Images/topi.png') : require('./Images/topi-dark.png')}
                             />
                             <View style={{ alignItems: 'flex-end' }}>
@@ -158,7 +161,7 @@ const Landing = () => {
                     </View>
 
                     <View style={styles.quickaccess}>
-                        <Text style={{ color: '#5B8699', fontFamily: 'Comfortaa-VariableFont_wght', fontSize: 17, margin: 5 }}>Quick Access</Text>
+                        <Text style={{ color: '#5B8699', fontFamily: 'Comfortaa-VariableFont_wght', fontSize: isTallDevice?27:17, margin: 5 }}>Quick Access</Text>
 
                         {/* Fixed Gradient Issue in Buttons */}
                         {["To Do List", "Upcoming Exams", "Holiday List"].map((item, index) => (
@@ -170,7 +173,7 @@ const Landing = () => {
                                         end={{ x: 1, y: 0.5 }}
                                         locations={[0, 0.2517, 0.55, 0.7417, 1]}
                                         style={styles.quickaccesscontainer}>
-                                        <Text style={[{ fontFamily: 'Comfortaa-VariableFont_wght', fontSize: 18, fontWeight: 'normal' }]}>
+                                        <Text style={[{ fontFamily: 'Comfortaa-VariableFont_wght', fontSize: isTallDevice?28:18, fontWeight: 'normal' }]}>
                                             {item}
                                         </Text>
                                     </LinearGradient>
@@ -179,7 +182,7 @@ const Landing = () => {
                         ))}
                     </View>
 
-                    <Text style={[{ color: dark ? '#1F3418' : '#5D8CAB' }, { marginTop: 20, fontSize: 18, fontFamily: 'Comfortaa-VariableFont_wght' }]}>Recently Visited</Text>
+                    <Text style={[{ color: dark ? '#1F3418' : '#5D8CAB' }, { marginTop: 20, fontSize: isTallDevice?28:18, fontFamily: 'Comfortaa-VariableFont_wght' }]}>Recently Visited</Text>
                     <ScrollView horizontal style={{ flexDirection: 'row', width: '80%' }}>
                         <TouchableOpacity>
                             <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
@@ -194,12 +197,37 @@ const Landing = () => {
                             <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
                             <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></Text>
                         </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></View>
+                            <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB' }]}></Text>
+                        </TouchableOpacity>
                     </ScrollView>
                 </View>
 
                 <View style={{ alignItems: 'center' }}>
-                    <Text style={[{ marginTop: 20, fontSize: 18, fontFamily: 'Comfortaa-VariableFont_wght', color: dark ? '#1F3418' : '#5D8CAB' }]}>Feedback Form</Text>
-                    <View style={{ backgroundColor: !dark ? '#333333' : '', borderWidth: 1, borderBlockColor: 'black', borderStyle: 'solid', borderRadius: 5, marginTop: 20, width: "80%", height: 200 }}></View>
+                    <Text style={[{ marginTop: 20, fontSize: isTallDevice?28:18, fontFamily: 'Comfortaa-VariableFont_wght', color: dark ? '#1F3418' : '#5D8CAB' }]}>Feedback Form</Text>
+                    <View style={{ backgroundColor: !dark ? '#333333' : '', borderWidth: 1, borderBlockColor: 'black', borderStyle: 'solid', borderRadius: 5, marginTop: 20, width: "80%", height: isTallDevice?400:200 }}></View>
                 </View>
             </ScrollView>
         </View>

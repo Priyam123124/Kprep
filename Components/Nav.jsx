@@ -1,10 +1,12 @@
-import { Image, StyleSheet, Text, TextInput, View, Animated} from 'react-native';
+import { Image, StyleSheet, Text, TextInput, View, Animated, Dimensions} from 'react-native';
 import React, { useEffect, useContext } from 'react';
 import themeContext from '../context/themeContext';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { globalStyles } from './global_styles';
 import { useRef, useState } from 'react';
 
+    const {width, height} = Dimensions.get('window')
+    const isTallDevice = width >=800 
 const Nav = () => {
   const context = useContext(themeContext)
   const {dark} = context
@@ -35,7 +37,7 @@ const Nav = () => {
   const styles = StyleSheet.create({
     container: {
       width: '100%',
-      height: 50,
+      height: isTallDevice?70:50,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
@@ -75,8 +77,8 @@ const Nav = () => {
       alignItems: 'center'
     },
     icon: {
-      width: 40,
-      height: 50,
+      width: isTallDevice?60:40,
+      height: isTallDevice?70:50,
     }
     
   });
@@ -105,11 +107,11 @@ const Nav = () => {
         ]}
       >
 
-            <Icon style={{ marginLeft: 7, marginRight: 7 }} name="search" size={20} color={!dark?"white": "black"} onPress={toggleExpand}/>
+            <Icon style={{ marginLeft: 7, marginRight: 7 }} name="search" size={isTallDevice?30:20} color={!dark?"white": "black"} onPress={toggleExpand}/>
             {expanded && <TextInput placeholder='search...' />}
           </Animated.View>
         </View>
-        <Icon style={{ marginLeft: '8%' }} name="bars" size={30} color={!dark?"white": "black"} />
+        <Icon style={{ marginLeft: '8%' }} name="bars" size={isTallDevice?50:30} color={!dark?"white": "black"} />
       </View>
     </View>
   );

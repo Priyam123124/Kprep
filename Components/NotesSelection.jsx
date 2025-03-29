@@ -1,10 +1,13 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View,Dimensions } from 'react-native'
 import React,{useContext} from 'react'
 import { globalStyles } from './global_styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 import { StackActions } from '@react-navigation/native'
 import themeContext from '../context/themeContext'
+
+    const {width, height} = Dimensions.get('window')
+    const isTallDevice = width >=800 
 
 const NotesSelection = () => {
     const context = useContext(themeContext)
@@ -18,7 +21,7 @@ const NotesSelection = () => {
     return (
         <>
         <View style={{ alignItems: 'center', height: '100%', backgroundColor: dark?'white':'#333333' }}>
-                <Text style={[{ width: 'auto', fontSize: 25, color: dark?globalStyles.textcolor.color: '#84CFFF', fontWeight: 'bold', marginTop: 50 }]}>Choose Your Notes</Text>
+                <Text style={[{ width: 'auto', fontSize: isTallDevice?40:25, color: dark?globalStyles.textcolor.color: '#84CFFF', fontWeight: 'bold', marginTop: 50 }]}>Choose Your Notes</Text>
                 <TouchableOpacity onPress={redirect} style={styles.container}>
                     <LinearGradient
                         colors={dark?["#9DC17B", "#587C4D"]:["#5F727F", "#8DB4CE"]}
@@ -27,7 +30,7 @@ const NotesSelection = () => {
                         style={{ width: '100%', height: '100%', alignItems: 'flex-end', flexDirection: 'row-reverse', borderRadius: 5 }}
                     >
 
-                        <Text style={{color: 'white', fontSize: 20, margin: 20}}>Star Notes</Text>
+                        <Text style={{color: 'white', fontSize: isTallDevice?30:20, margin: 20}}>Star Notes</Text>
                     </LinearGradient>
                 </TouchableOpacity>
 
@@ -39,7 +42,7 @@ const NotesSelection = () => {
                         style={{ width: '100%', height: '100%', alignItems: 'flex-end', flexDirection: 'row-reverse', borderRadius: 5 }}
                     >
 
-                        <Text style={{color: 'white', fontSize: 20, margin: 20}}>Regular Notes</Text>
+                        <Text style={{color: 'white', fontSize: isTallDevice?30:20, margin: 20}}>Regular Notes</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
