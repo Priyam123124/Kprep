@@ -8,25 +8,23 @@ import Resources from './Components/Resources';
 import NotesSelection from './Components/NotesSelection';
 import Tools from './Components/Tools';
 import ToDoList from './Components/ToDoList';
+import Landing from './Components/Landing';
 
 const Stack = createNativeStackNavigator();
 
-const Otherscs = () => {
+const Otherscs2 = () => {
   const context = useContext(themeContext)
   const { dark, setDark } = context
   return (
     <>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Tools" component={Tools} />
-          <Stack.Screen name="Subject" component={Subject} />
-          <Stack.Screen name="SGPA" component={SGPA} />
-          <Stack.Screen name="Resources" component={Resources} />
-          <Stack.Screen name="NotesSelection" component={NotesSelection} />
+          <Stack.Screen name="Landing" component={Landing} />
+          <Stack.Screen name='ToDoList' component={ToDoList}/>
         </Stack.Navigator>
     </>
   );
 }
 
-export default Otherscs;
+export default Otherscs2;
 
 const styles = StyleSheet.create({});

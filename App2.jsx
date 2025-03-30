@@ -11,6 +11,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import Otherscs from './Otherscs';
 import Profile from './Components/Profile';
 import ComingSoon from './Components/ComingSoon';
+import ToDoList from './Components/ToDoList';
+import Otherscs2 from './Otherscs2';
 const bottom = createBottomTabNavigator()
 const App2 = () => {
     const theme = useColorScheme()
@@ -30,7 +32,7 @@ const App2 = () => {
             <Nav />
             <NavigationContainer>
                 <bottom.Navigator screenOptions={{ headerShown: false, tabBarStyle: { backgroundColor: dark ? globalStyles.themecolor.backgroundColor : globalStyles.themecolorDark.backgroundColor, marginLeft: 1, borderRadius: 5, marginRight: 0.5 }, tabBarActiveTintColor: 'white', tabBarInactiveTintColor: dark ? '#d0f7d2' : '#a6b5bf' }}>
-                    <bottom.Screen name="Home" component={Landing} options={{
+                    <bottom.Screen name="Home" component={Otherscs2} options={{
                         tabBarLabel: '',
                         tabBarIcon: ({ color, size }) => (
                             <Icon name="home" color={color} size={size} />
