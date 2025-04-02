@@ -9,6 +9,8 @@ import NotesSelection from './Components/NotesSelection';
 import Tools from './Components/Tools';
 import ToDoList from './Components/ToDoList';
 import Landing from './Components/Landing';
+import Holidaylist from './Components/Holidaylist';
+import Upcomingexams from './Components/Upcomingexams';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +22,8 @@ const Otherscs2 = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Landing" component={Landing} />
           <Stack.Screen name='ToDoList' component={ToDoList}/>
+          <Stack.Screen name='Holidaylist' component={Holidaylist}/>
+          <Stack.Screen name='Upcomingexams' component={Upcomingexams}/>
         </Stack.Navigator>
     </>
   );

@@ -1,23 +1,33 @@
-import { StyleSheet, Text, useColorScheme, View } from 'react-native'
+import { StyleSheet, Text, useColorScheme, View, BackHandler } from 'react-native'
 import themeContext from './context/themeContext';
 import React, { useContext, useEffect } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { globalStyles } from './Components/global_styles';
-import Landing from './Components/Landing';
-import Subject from './Components/Subject';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Nav from './Components/Nav';
 import { NavigationContainer } from '@react-navigation/native';
 import Otherscs from './Otherscs';
 import Profile from './Components/Profile';
 import ComingSoon from './Components/ComingSoon';
-import ToDoList from './Components/ToDoList';
 import Otherscs2 from './Otherscs2';
 const bottom = createBottomTabNavigator()
 const App2 = () => {
     const theme = useColorScheme()
     const context = useContext(themeContext)
-    const { dark, setDark } = context
+    const { dark, setDark, setPyq } = context
+
+    useEffect(() => {
+        const backAction = () => {
+          setPyq(false)
+        };
+    
+        const backHandler = BackHandler.addEventListener(
+          'hardwareBackPress',
+          backAction
+        );
+    
+        return () => backHandler.remove(); // Cleanup the event listener
+      }, []);
 
     useEffect(() => {
         if (theme === 'dark') {

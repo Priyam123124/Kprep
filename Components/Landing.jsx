@@ -6,6 +6,8 @@ import { globalStyles } from './global_styles'
 import { useNavigation } from '@react-navigation/native'
 import { StackActions } from '@react-navigation/native'
 import ToDoList from './ToDoList'
+import Holidaylist from './Holidaylist'
+import Upcomingexams from './Upcomingexams'
 
 const Landing = () => {
     const context = useContext(themeContext)
@@ -21,6 +23,14 @@ const Landing = () => {
     const redirect = (name2) => {
         if (name2 == "To Do List") {
             navigation.navigate(ToDoList)
+        }
+
+        if (name2 == "Holiday List") {
+            navigation.navigate(Holidaylist)
+        }
+
+        if (name2 == "Upcoming Exams") {
+            navigation.navigate(Upcomingexams)
         }
     }
 

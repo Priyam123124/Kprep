@@ -7,15 +7,21 @@ import { StackActions } from '@react-navigation/native'
 
 const Subject = () => {
     const context = useContext(themeContext)
-    const { dark } = context
+    const { dark, pyq } = context
     const {width, height} = Dimensions.get('window')
     const isTallDevice = width >=800 
 
     const navigation = useNavigation()
         const redirect = ()=>{
-            navigation.dispatch(
-                StackActions.push('NotesSelection')
-            )
+            if(pyq) {
+                navigation.dispatch(
+                    StackActions.push('Pyq')
+                )
+            } else {
+                navigation.dispatch(
+                    StackActions.push('NotesSelection')
+                )
+            }
         }
     
         const styles = StyleSheet.create({
@@ -69,12 +75,3 @@ const Subject = () => {
 }
 
 export default Subject
-
-const styles = StyleSheet.create({
-    headingtext: {
-        fontSize: 30,
-        fontFamily: 'Poppins-SemiBold',
-        margin: 20,
-        borderTopLeftRadius: 0
-    },
-})

@@ -7,7 +7,7 @@ import SGPA from './Components/SGPA';
 import Resources from './Components/Resources';
 import NotesSelection from './Components/NotesSelection';
 import Tools from './Components/Tools';
-import ToDoList from './Components/ToDoList';
+import Pyq from './Components/Pyq';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +22,7 @@ const Otherscs = () => {
           <Stack.Screen name="SGPA" component={SGPA} />
           <Stack.Screen name="Resources" component={Resources} />
           <Stack.Screen name="NotesSelection" component={NotesSelection} />
+          <Stack.Screen name="Pyq" component={Pyq} />
         </Stack.Navigator>
     </>
   );

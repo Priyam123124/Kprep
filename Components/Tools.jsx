@@ -9,7 +9,7 @@ const Tools = () => {
     const context = useContext(themeContext)
     const {width, height} = Dimensions.get('window')
     const isTallDevice = width >=800 
-    const { dark } = context
+    const { dark, setPyq } = context
     const navigation = useNavigation()
     const redirect = (name2)=>{
         navigation.dispatch(
@@ -24,7 +24,7 @@ const Tools = () => {
                         <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Notes</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={()=>{redirect('Subject')}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
+                    <TouchableOpacity onPress={()=>{redirect('Subject'); setPyq(true)}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
                         <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>PYQs</Text>
                     </TouchableOpacity>
 

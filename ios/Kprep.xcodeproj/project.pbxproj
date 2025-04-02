@@ -52,6 +52,12 @@
 		2B2DE7514C8A47FA86E3BC78 /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE421EB84480788A2A772 /* Comfortaa-Medium.ttf */; };
 		38098E3203A14BA8AB685926 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DD857859E934E27BC0AF0C7 /* Comfortaa-Regular.ttf */; };
 		A953657386864B0E865B52E6 /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB01A07C89F4B4F8D4A8EB8 /* Comfortaa-SemiBold.ttf */; };
+		AA1D1E8F57884385851FE35C /* Sansation_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A63CD9E15CE472F8B2F2811 /* Sansation_Bold.ttf */; };
+		D347514C02714B7DB4116E9F /* Sansation_Bold_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D69F57F9444BBA0B1A3D1 /* Sansation_Bold_Italic.ttf */; };
+		C4B3F47C7DC94827A2421BC2 /* Sansation_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 368866B624C24E8B8C32FC9F /* Sansation_Italic.ttf */; };
+		45F28FA9342F46D2A0BC2022 /* Sansation_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE30E9453838462DB846AF17 /* Sansation_Light.ttf */; };
+		836AF3E6BCA648B19C9222F2 /* Sansation_Light_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69ABCCAC9447435F9D100618 /* Sansation_Light_Italic.ttf */; };
+		8D5404DE21B743E0B842257B /* Sansation_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5902B4BB4794BBD890EC56E /* Sansation_Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +127,12 @@
 		0AACE421EB84480788A2A772 /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Medium.ttf"; path = "../assets/fonts/Comfortaa-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9DD857859E934E27BC0AF0C7 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Regular.ttf"; path = "../assets/fonts/Comfortaa-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DDB01A07C89F4B4F8D4A8EB8 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; name = "Comfortaa-SemiBold.ttf"; path = "../assets/fonts/Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1A63CD9E15CE472F8B2F2811 /* Sansation_Bold.ttf */ = {isa = PBXFileReference; name = "Sansation_Bold.ttf"; path = "../assets/fonts/Sansation_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E1D69F57F9444BBA0B1A3D1 /* Sansation_Bold_Italic.ttf */ = {isa = PBXFileReference; name = "Sansation_Bold_Italic.ttf"; path = "../assets/fonts/Sansation_Bold_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		368866B624C24E8B8C32FC9F /* Sansation_Italic.ttf */ = {isa = PBXFileReference; name = "Sansation_Italic.ttf"; path = "../assets/fonts/Sansation_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AE30E9453838462DB846AF17 /* Sansation_Light.ttf */ = {isa = PBXFileReference; name = "Sansation_Light.ttf"; path = "../assets/fonts/Sansation_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		69ABCCAC9447435F9D100618 /* Sansation_Light_Italic.ttf */ = {isa = PBXFileReference; name = "Sansation_Light_Italic.ttf"; path = "../assets/fonts/Sansation_Light_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C5902B4BB4794BBD890EC56E /* Sansation_Regular.ttf */ = {isa = PBXFileReference; name = "Sansation_Regular.ttf"; path = "../assets/fonts/Sansation_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +280,12 @@
 				0AACE421EB84480788A2A772 /* Comfortaa-Medium.ttf */,
 				9DD857859E934E27BC0AF0C7 /* Comfortaa-Regular.ttf */,
 				DDB01A07C89F4B4F8D4A8EB8 /* Comfortaa-SemiBold.ttf */,
+				1A63CD9E15CE472F8B2F2811 /* Sansation_Bold.ttf */,
+				6E1D69F57F9444BBA0B1A3D1 /* Sansation_Bold_Italic.ttf */,
+				368866B624C24E8B8C32FC9F /* Sansation_Italic.ttf */,
+				AE30E9453838462DB846AF17 /* Sansation_Light.ttf */,
+				69ABCCAC9447435F9D100618 /* Sansation_Light_Italic.ttf */,
+				C5902B4BB4794BBD890EC56E /* Sansation_Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -406,6 +424,12 @@
 				2B2DE7514C8A47FA86E3BC78 /* Comfortaa-Medium.ttf in Resources */,
 				38098E3203A14BA8AB685926 /* Comfortaa-Regular.ttf in Resources */,
 				A953657386864B0E865B52E6 /* Comfortaa-SemiBold.ttf in Resources */,
+				AA1D1E8F57884385851FE35C /* Sansation_Bold.ttf in Resources */,
+				D347514C02714B7DB4116E9F /* Sansation_Bold_Italic.ttf in Resources */,
+				C4B3F47C7DC94827A2421BC2 /* Sansation_Italic.ttf in Resources */,
+				45F28FA9342F46D2A0BC2022 /* Sansation_Light.ttf in Resources */,
+				836AF3E6BCA648B19C9222F2 /* Sansation_Light_Italic.ttf in Resources */,
+				8D5404DE21B743E0B842257B /* Sansation_Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
