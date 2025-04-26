@@ -1,10 +1,19 @@
 import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native'
 import React, { useContext } from 'react'
 import themeContext from '../context/themeContext'
+import { StackActions } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
 const Start = () => {
   const context = useContext(themeContext)
   const { dark } = context
+
+      const navigation = useNavigation()
+      const redirect = (name2)=>{
+          navigation.dispatch(
+              StackActions.push(name2)
+          )
+      }
 
   const styles = StyleSheet.create({
     logoContainer: {
@@ -37,7 +46,7 @@ const Start = () => {
         <Image style={{width: '100%', height: '90%', marginLeft: '10%'}} source={dark?require('./Images/k-prep2.png'): require('./Images/Kprep-dark.png')} />
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={()=>{redirect('Welcome')}} style={styles.button}>
         <Text style={{color: 'white', fontFamily: 'Poppins-Bold', fontSize: 20, letterSpacing: 1}}>Get Started</Text>
         <Text style={{color: 'white', fontWeight: 900, fontSize: 40, marginBottom: '9%', letterSpacing: 1}}>→</Text>
       </TouchableOpacity>

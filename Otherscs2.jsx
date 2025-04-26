@@ -11,6 +11,7 @@ import ToDoList from './Components/ToDoList';
 import Landing from './Components/Landing';
 import Holidaylist from './Components/Holidaylist';
 import Upcomingexams from './Components/Upcomingexams';
+import Focus from './Components/Focus';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const Otherscs2 = () => {
           <Stack.Screen name='ToDoList' component={ToDoList}/>
           <Stack.Screen name='Holidaylist' component={Holidaylist}/>
           <Stack.Screen name='Upcomingexams' component={Upcomingexams}/>
+          <Stack.Screen name='Focus Mode' component={Focus}/>
         </Stack.Navigator>
     </>
   );

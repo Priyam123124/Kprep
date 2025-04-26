@@ -8,6 +8,9 @@ import Resources from './Components/Resources';
 import NotesSelection from './Components/NotesSelection';
 import Tools from './Components/Tools';
 import Pyq from './Components/Pyq';
+import Youtube from './Components/Youtube';
+import CourseStructure from './Components/CourseStructure';
+import FacultyDetails from './Components/FacultyDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +26,9 @@ const Otherscs = () => {
           <Stack.Screen name="Resources" component={Resources} />
           <Stack.Screen name="NotesSelection" component={NotesSelection} />
           <Stack.Screen name="Pyq" component={Pyq} />
+          <Stack.Screen name="Online Videos" component={Youtube} />
+          <Stack.Screen name="Course Structure" component={CourseStructure}/>
+          <Stack.Screen name="Faculty Details" component={FacultyDetails}/>
         </Stack.Navigator>
     </>
   );

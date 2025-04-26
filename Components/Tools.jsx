@@ -19,7 +19,7 @@ const Tools = () => {
     return (
         <>
             <View style={{ justifyContent: 'center', backgroundColor: dark?'white':'#333333', height: "100%", alignItems: 'center' }}>
-                <View style={{ width: "80%", justifyContent: 'center', alignItems: 'center', backgroundColor: dark?"#AAD198":"black", marginBottom: 150, borderRadius: 5 }}>
+                <View style={{ width: "80%", justifyContent: 'center', alignItems: 'center', backgroundColor: dark?"#AAD198":"black", borderRadius: 5 }}>
                     <TouchableOpacity onPress={()=>{redirect('Subject')}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
                         <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Notes</Text>
                     </TouchableOpacity>
@@ -28,8 +28,8 @@ const Tools = () => {
                         <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>PYQs</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
-                        <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Exam Schedules</Text>
+                    <TouchableOpacity onPress={()=>{redirect('Online Videos')}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
+                        <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Online Videos</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={()=>{redirect('SGPA')}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
@@ -37,7 +37,15 @@ const Tools = () => {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
-                        <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Notes Submission</Text>
+                        <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Cheat Sheet</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>{redirect('Course Structure')}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
+                        <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Course Details</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>{redirect('Faculty Details')}} style={[globalStyles.branchNameMiniContainer, {backgroundColor: dark?"#799E6A":"#446377", marginTop: 10, marginBottom: 10}]}>
+                        <Text style={{color: "white", fontSize: isTallDevice?30:20, fontWeight: 'bold'}}>Faculty Details</Text>
                     </TouchableOpacity>
                 </View>
             </View>
