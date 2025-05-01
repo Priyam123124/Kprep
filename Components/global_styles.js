@@ -25,7 +25,11 @@ export const globalStyles = StyleSheet.create({
   },
 
   container_background: {
-    backgroundColor: '#587C4E'
+    backgroundColor: '#f5f3d3'
+  },
+
+  app_background: {
+    backgroundColor: '#f5f3d3'
   },
 
   bgGround: {

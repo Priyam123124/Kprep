@@ -1,10 +1,11 @@
-import { StyleSheet, Text, Image, View, TouchableOpacity, Dimensions } from 'react-native'
+import { StyleSheet, Text, Image, View, TouchableOpacity, Dimensions, StatusBar } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import React, { useContext } from 'react'
 import themeContext from '../context/themeContext'
 import { StackActions } from '@react-navigation/native'
 import { useNavigation } from '@react-navigation/native'
-
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { globalStyles } from './global_styles'
 
 const Welcome = () => {
   const context = useContext(themeContext)
@@ -21,51 +22,156 @@ const Welcome = () => {
   }
 
   const styles = StyleSheet.create({
-    info: {
-      width: '100%',
-      height: isTallDevice?1500:'100%',
-      marginTop: '20%',
-      borderRadius: 60,
-    },
-    text: {
-      fontFamily: 'Poppins-Regular',
-      margin: 40,
-      fontSize: isTallDevice?50:30,
-      color: dark ? 'black' : '#032729'
-    },
-    button: {
+    container: {
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      borderWidth: 0.2,
-      borderColor: 'black',
-      borderStyle: 'solid',
-      width: '35%',
-      height: isTallDevice?70:45,
-      borderRadius: 50,
-      fontFamily: 'Copse-Regular'
+      backgroundColor: '#f5f3d3'
+    },
+    logo: {
+      width: isTallDevice ? '50%' : '60%',
+      height: isTallDevice ? 200 : 150,
+      resizeMode: 'contain',
+      marginBottom: 20
+    },
+    title: {
+      fontFamily: 'Poppins-Bold',
+      color: '#78B961',
+      fontSize: isTallDevice ? 60 : 40,
+      letterSpacing: 2,
+      marginBottom: 40
+    },
+    cardContainer: {
+      width: '90%',
+      height: isTallDevice ? 500 : 400,
+      borderRadius: 30,
+      overflow: 'hidden',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 6,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 7,
+      elevation: 10
+    },
+    cardContent: {
+      width: '100%',
+      height: '100%',
+      padding: 25
+    },
+    welcomeText: {
+      fontFamily: 'Poppins-Bold',
+      color: '#333',
+      fontSize: isTallDevice ? 40 : 28,
+      marginBottom: 15,
+      fontWeight: 'bold'
+    },
+    description: {
+      fontFamily: 'calibri-regular',
+      color: '#555',
+      fontSize: isTallDevice ? 22 : 16,
+      marginBottom: 40,
+      lineHeight: isTallDevice ? 30 : 22
+    },
+    buttonRow: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: isTallDevice ? 40 : 30
+    },
+    button: {
+      width: isTallDevice ? 180 : 130,
+      height: isTallDevice ? 60 : 45,
+      borderRadius: 25,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginHorizontal: 10,
+      flexDirection: 'row',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 3,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 5
+    },
+    buttonText: {
+      fontFamily: 'Poppins-Bold',
+      fontSize: isTallDevice ? 20 : 16,
+      marginLeft: 8
+    },
+    signinButton: {
+      backgroundColor: '#f5f3d3',
+      borderWidth: 2,
+      borderColor: '#78B961'
+    },
+    signinText: {
+      color: '#78B961'
+    },
+    signupButton: {
+      overflow: 'hidden'
+    },
+    signupText: {
+      color: '#333'
     }
   })
 
   return (
-    <View style={{ justifyContent: 'center', backgroundColor: dark ? 'white' : 'black', alignItems: 'center', width: '100%', height: '100%' }}>
-      <Image style={{ width: '60%', height: isTallDevice?'25%':'20%', marginTop: '150%' }} source={dark ? require('./Images/topi.png') : require('./Images/topi-dark.png')} />
-      <View>
-        <Text style={{ fontFamily: 'Poppins-Bold', color: dark ? '#7A9670' : '#A4D8FA', fontSize: isTallDevice?80:40, letterSpacing: 2 }}>K-PREP</Text>
-      </View>
-      <LinearGradient
-        colors={dark ? ["#587C4D", "#81A376"] : ['#81A4BB', '#81A4BB']}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 1 }}
-        style={styles.info}
-      >
-        <Text style={styles.text}>Welcome</Text>
-        <Text style={[styles.text, { fontFamily: 'calibri-regular', color: dark ? 'black' : '#022684', marginTop: "-5%", fontSize: isTallDevice?30:22 }]}>lorem ipsum dolor sit amet,consectetur adipisicing elit, </Text>
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#f5f3d3" barStyle="dark-content" />
 
-        <View style={{ width: '100%', justifyContent: 'center', flexDirection: 'row', alignItems: 'center' }}>
-          <TouchableOpacity onPress={()=>{redirect('basic_info')}} style={[styles.button, { backgroundColor: 'white' }]}><Text style={{ fontFamily: 'Copse-Regular', fontSize: isTallDevice?25:15 }}>Sign In</Text></TouchableOpacity>
-          <TouchableOpacity onPress={()=>{redirect('basic_info')}} style={[styles.button, { marginLeft: 10, backgroundColor: 'black', color: 'white' }]}><Text style={{ fontFamily: 'Copse-Regular', color: 'white', fontSize: isTallDevice?25:15 }}>Sign Up</Text></TouchableOpacity>
-        </View>
-      </LinearGradient>
+      <Image style={styles.logo} source={require('./Images/topi.png')} />
+
+      <Text style={styles.title}>K-PREP</Text>
+
+      <View style={styles.cardContainer}>
+        <LinearGradient
+          colors={['#FFFDD0', '#78B961']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 0, y: 1 }}
+          style={styles.cardContent}
+        >
+          <Text style={styles.welcomeText}>Welcome</Text>
+
+          <Text style={styles.description}>
+            Ready to enhance your educational journey? K-PREP offers all the tools and resources you need to excel in your academic pursuits.
+          </Text>
+
+          <View style={styles.buttonRow}>
+            <TouchableOpacity
+              onPress={() => { redirect('basic_info') }}
+              style={[styles.button, styles.signinButton]}
+            >
+              <Icon name="sign-in" size={isTallDevice ? 20 : 16} color="#78B961" />
+              <Text style={[styles.buttonText, styles.signinText]}>Sign In</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => { redirect('basic_info') }}
+              style={[styles.button, styles.signupButton]}
+            >
+              <LinearGradient
+                colors={['#FFFDD0', '#78B961']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 25,
+                  flexDirection: 'row'
+                }}
+              >
+                <Icon name="user-plus" size={isTallDevice ? 20 : 16} color="#333" />
+                <Text style={[styles.buttonText, styles.signupText]}>Sign Up</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          </View>
+        </LinearGradient>
+      </View>
     </View>
   )
 }

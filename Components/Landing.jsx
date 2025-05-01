@@ -73,13 +73,9 @@ const Landing = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const gradientColor = dark
-        ? ['#75A665', '#9DC17B', '#CAE5B0', '#9DC17B', '#75A665']
-        : ['#333333', '#5F727F', '#8DB4CE'];
-
     const styles = StyleSheet.create({
         screen: {
-            backgroundColor: dark ? '#FFFFFF' : '#1E1E1E',
+            backgroundColor: '#f5f3d3',
             flex: 1,
         },
         container: {
@@ -88,146 +84,239 @@ const Landing = () => {
         },
         welcomeCard: {
             width: '90%',
-            backgroundColor: dark ? '#F7FFEB' : '#2D2D2D',
-            borderRadius: 12,
-            padding: 16,
-            marginVertical: 10,
+            backgroundColor: '#f5f3d3',
+            borderRadius: 20,
+            overflow: 'hidden',
             shadowColor: '#000',
-            shadowOpacity: 0.2,
-            shadowOffset: { width: 0, height: 2 },
-            shadowRadius: 4,
+            shadowOpacity: 0.1,
+            shadowOffset: { width: 0, height: 3 },
+            shadowRadius: 6,
             elevation: 5,
+            marginVertical: 10,
         },
-        greetingText: {
-            fontFamily: 'Poppins-Bold',
-            fontSize: isTallDevice ? 50 : 22,
-            color: dark ? '#000' : '#FFF',
-            textAlign: 'right',
+        welcomeContent: {
+            padding: 20,
+        },
+        greetingRow: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+        },
+        greetingImage: {
+            width: isTallDevice ? 200 : 120,
+            height: isTallDevice ? 150 : 80,
+            resizeMode: 'contain'
+        },
+        greetingTextContainer: {
+            alignItems: 'flex-end'
         },
         dateText: {
             fontFamily: 'ComicNeue-Regular',
-            fontSize: isTallDevice ? 30 : 14,
-            color: dark ? '#000' : '#FFF',
+            fontSize: isTallDevice ? 20 : 14,
+            color: '#555',
             marginBottom: 5,
+        },
+        greetingText: {
+            fontFamily: 'Poppins-Bold',
+            fontSize: isTallDevice ? 32 : 22,
+            color: '#333',
+            textAlign: 'right',
+        },
+        nameText: {
+            fontFamily: 'Poppins-Bold',
+            fontSize: isTallDevice ? 34 : 24,
+            color: '#78B961',
             textAlign: 'right',
         },
         subText: {
-            fontSize: isTallDevice ? 22 : 12,
-            color: dark ? '#000000' : '#CCCCCC',
+            fontSize: isTallDevice ? 18 : 14,
+            color: '#666',
             marginTop: 15,
-            textAlign: 'right',
+            lineHeight: isTallDevice ? 26 : 20,
             fontFamily: 'ComicNeue-Regular',
-        },
-        profileImage: {
-            width: 60,
-            height: 60,
-            borderRadius: 50,
-            borderWidth: 1,
-            borderColor: '#000',
-            margin: 10,
         },
         quickAccess: {
             width: '90%',
-            backgroundColor: dark ? '#FFF9D0' : '#1F1F1F',
-            borderRadius: 12,
-            paddingVertical: 10,
-            paddingHorizontal: 8,
-            elevation: 6,
+            backgroundColor: '#f5f3d3',
+            borderRadius: 20,
+            paddingVertical: 20,
+            paddingHorizontal: 20,
+            elevation: 5,
+            shadowColor: '#000',
+            shadowOpacity: 0.1,
+            shadowOffset: { width: 0, height: 3 },
+            shadowRadius: 6,
             marginVertical: 15,
         },
         quickTitle: {
-            color: '#5B8699',
+            color: '#333',
             fontFamily: 'Comfortaa-Bold',
-            fontSize: isTallDevice ? 30 : 18,
-            marginBottom: 10,
+            fontSize: isTallDevice ? 28 : 20,
+            marginBottom: 15,
+            fontWeight: 'bold'
         },
         accessBtn: {
-            marginVertical: 5,
-            borderRadius: 10,
+            marginVertical: 8,
+            borderRadius: 15,
             overflow: 'hidden',
+            height: isTallDevice ? 110 : 90,
+            shadowColor: '#000',
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.1,
+            shadowRadius: 3,
+            elevation: 4
         },
-        accessInner: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            padding: 12,
-            paddingLeft: 18,
+        accessGradient: {
+            width: '100%',
+            height: '100%',
+            padding: 16,
+            justifyContent: 'flex-start'
         },
-        accessText: {
-            fontSize: isTallDevice ? 28 : 18,
-            marginLeft: 12,
+        accessTitle: {
+            fontSize: isTallDevice ? 22 : 18,
             fontFamily: 'Comfortaa-Bold',
-            color: '#000',
+            color: '#333',
+            fontWeight: 'bold'
+        },
+        accessSubtitle: {
+            fontSize: isTallDevice ? 16 : 14,
+            fontFamily: 'ComicNeue-Regular',
+            color: '#444',
+            marginTop: 5
+        },
+        accessIcon: {
+            position: 'absolute',
+            bottom: 12,
+            right: 16
         },
         sectionTitle: {
             fontFamily: 'Comfortaa-Bold',
-            fontSize: isTallDevice ? 30 : 18,
-            marginTop: 15,
-            marginBottom: 5,
-            color: dark ? '#1F3418' : '#5D8CAB',
+            fontSize: isTallDevice ? 28 : 18,
+            marginTop: 20,
+            marginBottom: 10,
+            color: '#333',
             width: '90%',
+            fontWeight: 'bold'
         },
-        card: {
-            width: isTallDevice?200:130,
-            height: isTallDevice?200:130,
-            borderRadius: 10,
-            marginRight: 10,
-            borderWidth: 1,
+        recentlyVisitedContainer: {
+            paddingHorizontal: 20,
+            paddingVertical: 10
+        },
+        contentIcon: {
+            width: isTallDevice ? 160 : 120,
+            height: isTallDevice ? 180 : 140,
+            borderRadius: 15,
+            marginRight: 15,
+            backgroundColor: '#f5f3d3',
             justifyContent: 'center',
             alignItems: 'center',
+            shadowColor: '#000',
+            shadowOpacity: 0.1,
+            shadowOffset: { width: 0, height: 2 },
+            shadowRadius: 4,
+            elevation: 3,
+            borderWidth: 1,
+            borderColor: '#E0E0E0'
+        },
+        contentImage: {
+            width: isTallDevice ? 100 : 70,
+            height: isTallDevice ? 100 : 70,
+            resizeMode: 'contain'
+        },
+        contentTitle: {
+            marginTop: 10,
+            fontSize: isTallDevice ? 16 : 13,
+            fontFamily: 'Comfortaa-Bold',
+            color: '#333',
+            textAlign: 'center',
         },
         feedbackCard: {
-            backgroundColor: dark ? '#F7F7F7' : '#2A2A2A',
+            backgroundColor: '#f5f3d3',
             width: '90%',
-            height: isTallDevice ? 250 : 150,
+            height: isTallDevice ? 200 : 150,
             marginTop: 20,
-            borderRadius: 12,
-            borderWidth: 1,
-            borderColor: '#888',
-        },
+            marginBottom: 30,
+            borderRadius: 20,
+            shadowColor: '#000',
+            shadowOpacity: 0.1,
+            shadowOffset: { width: 0, height: 3 },
+            shadowRadius: 6,
+            elevation: 5,
+        }
     });
 
     return (
         <View style={styles.screen}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
-                    {/* Welcome */}
+                    {/* Welcome Card */}
                     <View style={styles.welcomeCard}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Image
-                                style={{
-                                    width: isTallDevice ? 250 : 120,
-                                    height: isTallDevice ? 180 : 70
-                                }}
-                                source={dark ? require('./Images/topi.png') : require('./Images/topi-dark.png')}
-                            />
-                            <View style={{ justifyContent: 'flex-start', alignItems: 'flex-end' }}>
-                                <Text style={styles.dateText}>{day}th {mon} {year}</Text>
-                                <Text style={styles.greetingText}>{greet},</Text>
-                                <Text style={[styles.greetingText, { fontSize: isTallDevice ? 50 : 20, color: '#74AA63' }]}>Priyam</Text>
+                        <LinearGradient
+                            colors={['#FFFDD0', '#78B961']}
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 0, y: 1 }}
+                            style={styles.welcomeContent}
+                        >
+                            <View style={styles.greetingRow}>
+                                <Image
+                                    style={styles.greetingImage}
+                                    source={require('./Images/topi.png')}
+                                />
+                                <View style={styles.greetingTextContainer}>
+                                    <Text style={styles.dateText}>{day}th {mon} {year}</Text>
+                                    <Text style={styles.greetingText}>{greet},</Text>
+                                    <Text style={styles.nameText}>Priyam</Text>
+                                </View>
                             </View>
-                        </View>
-                        <Text style={styles.subText}>
-                            Did you do anything productive today? Here’s a list of every important thing you have ignored this week...
-                        </Text>
+                            <Text style={styles.subText}>
+                                Did you do anything productive today? Here's a list of every important thing you have ignored this week...
+                            </Text>
+                        </LinearGradient>
                     </View>
 
                     {/* Quick Access */}
                     <View style={styles.quickAccess}>
-                        <Text style={styles.quickTitle}>Quick Access</Text>
+                        <Text style={styles.quickTitle}>Quick Links</Text>
                         {[
-                            { write: 'To Do List', ic: 'checkbox-marked-outline' },
-                            { write: 'Upcoming Exams', ic: 'calendar-outline' },
-                            { write: 'Holiday List', ic: 'palm-tree' },
+                            {
+                                title: 'To Do List',
+                                subtitle: 'Schedule your tasks',
+                                ic: 'clipboard-text-outline'
+                            },
+                            {
+                                title: 'Exam Schedule',
+                                subtitle: 'View upcoming exams',
+                                ic: 'school'
+                            },
+                            {
+                                title: 'Holiday List',
+                                subtitle: 'Check out your holidays',
+                                ic: 'calendar'
+                            },
+                            {
+                                title: 'Book Selling',
+                                subtitle: 'Sell your books',
+                                ic: 'book-open-variant'
+                            }
                         ].map((item, index) => (
-                            <TouchableOpacity key={index} style={styles.accessBtn} onPress={() => redirect(item.write)}>
+                            <TouchableOpacity
+                                key={index}
+                                style={styles.accessBtn}
+                                onPress={() => redirect(item.title)}
+                                activeOpacity={0.8}
+                            >
                                 <LinearGradient
-                                    colors={gradientColor}
-                                    start={{ x: 0, y: 0.5 }}
-                                    end={{ x: 1, y: 0.5 }}
-                                    locations={[0, 0.25, 0.55, 0.75, 1]}>
-                                    <View style={styles.accessInner}>
-                                        <Icon name={item.ic} size={isTallDevice?50:30} color="#000" />
-                                        <Text style={styles.accessText}>{item.write}</Text>
+                                    colors={['#FFFDD0', '#78B961']}
+                                    start={{ x: 0, y: 0 }}
+                                    end={{ x: 0, y: 1 }}
+                                    style={styles.accessGradient}>
+                                    <Text style={styles.accessTitle}>{item.title}</Text>
+                                    <Text style={styles.accessSubtitle}>{item.subtitle}</Text>
+                                    <View style={styles.accessIcon}>
+                                        <Icon name={item.ic} size={isTallDevice ? 28 : 22} color="#333" />
                                     </View>
                                 </LinearGradient>
                             </TouchableOpacity>
@@ -236,23 +325,19 @@ const Landing = () => {
 
                     {/* Recently Visited */}
                     <Text style={styles.sectionTitle}>Recently Visited</Text>
-                    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 10 }}>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        style={styles.recentlyVisitedContainer}
+                    >
                         {Array(8).fill(0).map((_, index) => (
-                            <TouchableOpacity key={index}>
-                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB' }]}>
+                            <TouchableOpacity key={index} activeOpacity={0.7}>
+                                <View style={styles.contentIcon}>
                                     <Image
-                                        source={require('../Components/Images/freepdf.png')}
-                                        style={{ width: isTallDevice?120:70, height: isTallDevice?120:70 }}
-                                        resizeMode="contain"
+                                        source={require('./Images/freepdf.png')}
+                                        style={styles.contentImage}
                                     />
-                                    <Text
-                                        style={{
-                                            marginTop: 8,
-                                            fontSize: isTallDevice ? 20 : 12,
-                                            fontFamily: 'Comfortaa-Bold',
-                                            color: dark ? '#000' : '#FFF',
-                                            textAlign: 'center',
-                                        }}>
+                                    <Text style={styles.contentTitle}>
                                         COA PDF
                                     </Text>
                                 </View>
@@ -262,7 +347,12 @@ const Landing = () => {
 
                     {/* Feedback Form */}
                     <Text style={styles.sectionTitle}>Feedback Form</Text>
-                    <View style={styles.feedbackCard} />
+                    <LinearGradient
+                        colors={['#FFFDD0', '#78B961']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 0, y: 1 }}
+                        style={styles.feedbackCard}
+                    />
                 </View>
             </ScrollView>
         </View>
