@@ -17,7 +17,7 @@ const Upcomingexams = () => {
                             </View>
                         </View>
     
-                        <ScrollView style={{width: '100%', backgroundColor: '#F0FBE6'}}>
+                        <ScrollView showsVerticalScrollIndicator={false} style={{width: '100%', backgroundColor: '#F0FBE6'}}>
                         {Array.from({ length: 20 }, (_, i) => (
                             <View key={i} style={{ width: '100%', alignItems: 'center' }}>
                             <View style={styles.calenderlist}>

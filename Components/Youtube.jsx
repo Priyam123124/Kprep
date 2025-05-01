@@ -15,7 +15,7 @@ const Youtube = () => {
             </View>
 
             <View style={{width: '100%'}}>
-            <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ alignItems: 'center' }}>
                 {Array.from({ length: 10}).map((_, index) => (
                     <TouchableOpacity key={index} style={styles.videosection}>
                     <View style={{marginTop: 15}}>

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, Image, View, TouchableOpacity, Dimensions } from 'react-native'
 import React, { useContext } from 'react'
 import themeContext from '../context/themeContext'
 import { StackActions } from '@react-navigation/native'
@@ -7,6 +7,9 @@ import { useNavigation } from '@react-navigation/native'
 const Start = () => {
   const context = useContext(themeContext)
   const { dark } = context
+
+      const { width, height } = Dimensions.get('window');
+      const isTallDevice = width >= 800;
 
       const navigation = useNavigation()
       const redirect = (name2)=>{
@@ -20,9 +23,9 @@ const Start = () => {
         borderWidth: 2,
         borderColor: '#124567',
         borderStyle: 'solid',
-        width: '60%',
-        height: '30%',
-        borderRadius: 200,
+        width:'60%',
+        height: isTallDevice?470:'30%',
+        borderRadius: 2000,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -47,8 +50,8 @@ const Start = () => {
       </View>
 
       <TouchableOpacity onPress={()=>{redirect('Welcome')}} style={styles.button}>
-        <Text style={{color: 'white', fontFamily: 'Poppins-Bold', fontSize: 20, letterSpacing: 1}}>Get Started</Text>
-        <Text style={{color: 'white', fontWeight: 900, fontSize: 40, marginBottom: '9%', letterSpacing: 1}}>→</Text>
+        <Text style={{color: 'white', fontFamily: 'Poppins-Bold', fontSize: isTallDevice?40:20, letterSpacing: 1}}>Get Started</Text>
+        <Text style={{color: 'white', fontWeight: 900, fontSize: isTallDevice?65:40, marginBottom: '9%', letterSpacing: 1}}>→</Text>
       </TouchableOpacity>
     </View>
   )

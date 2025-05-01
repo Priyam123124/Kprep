@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, Image, View, TouchableOpacity, Dimensions } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import React, { useContext } from 'react'
 import themeContext from '../context/themeContext'
@@ -10,6 +10,9 @@ const Welcome = () => {
   const context = useContext(themeContext)
   const { dark } = context
 
+  const { width, height } = Dimensions.get('window');
+  const isTallDevice = width >= 800
+
   const navigation = useNavigation()
   const redirect = (name2) => {
     navigation.dispatch(
@@ -20,14 +23,14 @@ const Welcome = () => {
   const styles = StyleSheet.create({
     info: {
       width: '100%',
-      height: '100%',
+      height: isTallDevice?1500:'100%',
       marginTop: '20%',
       borderRadius: 60,
     },
     text: {
       fontFamily: 'Poppins-Regular',
       margin: 40,
-      fontSize: 30,
+      fontSize: isTallDevice?50:30,
       color: dark ? 'black' : '#032729'
     },
     button: {
@@ -37,7 +40,7 @@ const Welcome = () => {
       borderColor: 'black',
       borderStyle: 'solid',
       width: '35%',
-      height: 45,
+      height: isTallDevice?70:45,
       borderRadius: 50,
       fontFamily: 'Copse-Regular'
     }
@@ -45,9 +48,9 @@ const Welcome = () => {
 
   return (
     <View style={{ justifyContent: 'center', backgroundColor: dark ? 'white' : 'black', alignItems: 'center', width: '100%', height: '100%' }}>
-      <Image style={{ width: '60%', height: '20%', marginTop: '150%' }} source={dark ? require('./Images/topi.png') : require('./Images/topi-dark.png')} />
+      <Image style={{ width: '60%', height: isTallDevice?'25%':'20%', marginTop: '150%' }} source={dark ? require('./Images/topi.png') : require('./Images/topi-dark.png')} />
       <View>
-        <Text style={{ fontFamily: 'Poppins-Bold', color: dark ? '#7A9670' : '#A4D8FA', fontSize: 40, letterSpacing: 2 }}>K-PREP</Text>
+        <Text style={{ fontFamily: 'Poppins-Bold', color: dark ? '#7A9670' : '#A4D8FA', fontSize: isTallDevice?80:40, letterSpacing: 2 }}>K-PREP</Text>
       </View>
       <LinearGradient
         colors={dark ? ["#587C4D", "#81A376"] : ['#81A4BB', '#81A4BB']}
@@ -56,11 +59,11 @@ const Welcome = () => {
         style={styles.info}
       >
         <Text style={styles.text}>Welcome</Text>
-        <Text style={[styles.text, { fontFamily: 'calibri-regular', color: dark ? 'black' : '#022684', marginTop: "-5%", fontSize: 22 }]}>lorem ipsum dolor sit amet,consectetur adipisicing elit, </Text>
+        <Text style={[styles.text, { fontFamily: 'calibri-regular', color: dark ? 'black' : '#022684', marginTop: "-5%", fontSize: isTallDevice?30:22 }]}>lorem ipsum dolor sit amet,consectetur adipisicing elit, </Text>
 
         <View style={{ width: '100%', justifyContent: 'center', flexDirection: 'row', alignItems: 'center' }}>
-          <TouchableOpacity onPress={()=>{redirect('basic_info')}} style={[styles.button, { backgroundColor: 'white' }]}><Text style={{ fontFamily: 'Copse-Regular' }}>Sign In</Text></TouchableOpacity>
-          <TouchableOpacity onPress={()=>{redirect('basic_info')}} style={[styles.button, { marginLeft: 10, backgroundColor: 'black', color: 'white' }]}><Text style={{ fontFamily: 'Copse-Regular', color: 'white' }}>Sign Up</Text></TouchableOpacity>
+          <TouchableOpacity onPress={()=>{redirect('basic_info')}} style={[styles.button, { backgroundColor: 'white' }]}><Text style={{ fontFamily: 'Copse-Regular', fontSize: isTallDevice?25:15 }}>Sign In</Text></TouchableOpacity>
+          <TouchableOpacity onPress={()=>{redirect('basic_info')}} style={[styles.button, { marginLeft: 10, backgroundColor: 'black', color: 'white' }]}><Text style={{ fontFamily: 'Copse-Regular', color: 'white', fontSize: isTallDevice?25:15 }}>Sign Up</Text></TouchableOpacity>
         </View>
       </LinearGradient>
     </View>

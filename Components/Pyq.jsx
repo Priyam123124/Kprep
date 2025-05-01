@@ -26,35 +26,29 @@ const Pyq = () => {
                 </View>
 
                 <View horizontal style={{ flexDirection: 'row', width: '90%', flexWrap: 'wrap', marginLeft: 20 }}>
-                    <TouchableOpacity style={{ width: '47%' }}>
-                        <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice ? '55%' : '45%' }]}></View>
-                        <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%' }]}></Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{ width: '47%', }}>
-                        <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice ? '55%' : '45%', marginLeft: '13%' }]}></View>
-                        <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%', marginLeft: '13%' }]}></Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{ width: '47%' }}>
-                        <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice ? '55%' : '45%' }]}></View>
-                        <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%' }]}></Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{ width: '47%', }}>
-                        <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice ? '55%' : '45%', marginLeft: '13%' }]}></View>
-                        <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%', marginLeft: '13%' }]}></Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{ width: '47%' }}>
-                        <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice ? '55%' : '45%' }]}></View>
-                        <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%' }]}></Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{ width: '47%', }}>
-                        <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice ? '55%' : '45%', marginLeft: '13%' }]}></View>
-                        <Text style={[globalStyles.content_icon, globalStyles.content_title, { borderColor: dark ? '#487639' : '#5D8CAB', width: '99.5%', marginLeft: '13%' }]}></Text>
-                    </TouchableOpacity>
+                    <TouchableOpacity  style={{width: '47%', marginTop: 20}}>
+                                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice?250:150 }]}></View>
+                                            </TouchableOpacity>
+                    
+                                            <TouchableOpacity  style={{width: '47%', marginTop: 20}}>
+                                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice?250:150, marginLeft: '13%' }]}></View>
+                                            </TouchableOpacity>
+                    
+                                            <TouchableOpacity  style={{width: '47%', marginTop: 20}}>
+                                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice?250:150 }]}></View>
+                                            </TouchableOpacity>
+                    
+                                            <TouchableOpacity  style={{width: '47%', marginTop: 20}}>
+                                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice?250:150, marginLeft: '13%' }]}></View>
+                                            </TouchableOpacity>
+                    
+                                            <TouchableOpacity  style={{width: '47%', marginTop: 20}}>
+                                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice?250:150 }]}></View>
+                                            </TouchableOpacity>
+                    
+                                            <TouchableOpacity  style={{width: '47%', marginTop: 20}}>
+                                                <View style={[globalStyles.content_icon, { borderColor: dark ? '#487639' : '#5D8CAB', width: '100%', height: isTallDevice?250:150, marginLeft: '13%' }]}></View>
+                                            </TouchableOpacity>
                 </View>
 
             </ScrollView>

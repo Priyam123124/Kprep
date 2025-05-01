@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Dimensions } from 'react-native'
 import React, { useContext } from 'react'
 import themeContext from '../context/themeContext'
 import { StackActions } from '@react-navigation/native'
@@ -7,6 +7,9 @@ import { useNavigation } from '@react-navigation/native'
 const BasicInfo = () => {
     const context = useContext(themeContext)
     const { dark } = context
+
+    const { width, height } = Dimensions.get('window');
+    const isTallDevice = width >= 800
 
     const navigation = useNavigation()
     const redirect = (name2) => {
@@ -24,7 +27,7 @@ const BasicInfo = () => {
         infoContainer: {
             backgroundColor: dark ? '#587C4D' : 'black',
             width: '90%',
-            height: 600,
+            height: isTallDevice?700:600,
             borderRadius: 20
         },
         text: {
@@ -32,7 +35,7 @@ const BasicInfo = () => {
             color: '#E9E5C9',
             marginTop: 20,
             marginLeft: 20,
-            fontSize: 18
+            fontSize: isTallDevice?27:18
         },
         inputfield: {
             backgroundColor: '#FFFCE4',
@@ -50,7 +53,7 @@ const BasicInfo = () => {
         button: {
             backgroundColor: '#446377',
             width: '27%',
-            height: '25%',
+            height: isTallDevice?'28%':'25%',
             borderRadius: 10,
             marginTop: 10,
             justifyContent: 'center',
@@ -61,7 +64,7 @@ const BasicInfo = () => {
         <View style={styles.container}>
             <View style={styles.infoContainer}>
                 <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontFamily: 'calibri-bold', color: 'white', fontSize: 22, marginTop: 50 }}>Basic Information</Text>
+                    <Text style={{ fontFamily: 'calibri-bold', color: 'white', fontSize: isTallDevice?40:22, marginTop: 50 }}>Basic Information</Text>
                 </View>
                 <View style={{ width: '100%' }}>
                     <Text style={styles.text}>Your Name</Text>
@@ -103,7 +106,7 @@ const BasicInfo = () => {
 
                     <View style={{ width: '100%', alignItems: 'center' }}>
                         <TouchableOpacity onPress={()=>{redirect('main')}} style={styles.button}>
-                            <Text style={{ fontFamily: 'ComicNeue-Bold', color: 'white', fontSize: 18 }}>SAVE</Text>
+                            <Text style={{ fontFamily: 'ComicNeue-Bold', color: 'white', fontSize: isTallDevice?30:18 }}>SAVE</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
